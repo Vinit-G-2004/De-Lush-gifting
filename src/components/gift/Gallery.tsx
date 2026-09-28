@@ -1,15 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import suite from "@/assets/g-suite.JPG";
-import dining from "@/assets/g-dining.JPG";
-import spa from "@/assets/g-spa.JPG";
+<<<<<<< HEAD
+import suite from "@/assets/g-suite.jpg";
+import dining from "@/assets/g-dining.jpg";
+import spa from "@/assets/g-spa.jpg";
+=======
+import suite from "@/assets/g-suite.jpg";
+import dining from "@/assets/g-dining.jpg";
+import spa from "@/assets/g-spa.jpg";
+>>>>>>> 737fdd4 (Fix image file casing)
 import hightea from "@/assets/g-hightea.jpg";
-import voucher from "@/assets/g-voucher.JPG";
-import pool from "@/assets/g-pool.JPG";
-import couple from "@/assets/g-couple.JPG";
+import voucher from "@/assets/g-voucher.jpg";
+import pool from "@/assets/g-pool.jpg";
+import couple from "@/assets/g-couple.jpg";
 import breakfast from "@/assets/g-breakfast.jpg";
 import garden from "@/assets/g-garden.jpg";
-import hero from "@/assets/hero-resort.JPG";
+import hero from "@/assets/hero-resort.jpg";
 import { Reveal } from "./Reveal";
 import { TiltCard } from "./TiltCard";
 import { cn } from "@/lib/utils";
