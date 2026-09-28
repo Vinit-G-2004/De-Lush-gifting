@@ -205,13 +205,13 @@ export function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={images[open].src}
-              alt={images[open].caption}
+              src={images[open]!.src}
+              alt={images[open]!.caption}
               className="max-h-[75svh] w-full rounded-2xl object-contain"
             />
 
             <figcaption className="mt-4 text-center text-sm tracking-wide text-primary-foreground/80">
-              {images[open].caption} · {open + 1} / {images.length}
+              {images[open]!.caption} · {open + 1} / {images.length}
             </figcaption>
           </figure>
 
