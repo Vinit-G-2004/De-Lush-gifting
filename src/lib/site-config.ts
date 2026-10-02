@@ -13,7 +13,7 @@ export const whatsappLink = () =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 // Google Apps Script Web App URL that appends the enquiry to a Google Sheet.
-export const ENQUIRY_ENDPOINT = "";
+export const ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbyAL6hKnHJL0wP2mQu1sx4AljoJaz6pI1YUzyaDa50dCm6sT2qGmL-9irPJDq2UJkXCdA/exec";
 
 export const RESORT = {
   name: "De LUSH Resort",

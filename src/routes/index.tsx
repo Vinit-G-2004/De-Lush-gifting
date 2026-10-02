@@ -5,7 +5,8 @@ import { Packages } from "@/components/gift/Packages";
 import { Gallery } from "@/components/gift/Gallery";
 import { EnquiryForm } from "@/components/gift/EnquiryForm";
 import { Footer } from "@/components/gift/Footer";
-import { WhatsAppButton } from "@/components/gift/WhatsAppButton";
+import { Retail } from "@/components/gift/Retail";
+
 
 const title = "Gifting an Experience | De LUSH Resort, Bavdhan Pune";
 const description =
@@ -30,10 +31,10 @@ function Index() {
     <main className="overflow-x-hidden">
       <Hero />
       <Packages />
+      <Retail />
       <Gallery />
       <EnquiryForm />
       <Footer />
-      <WhatsAppButton />
       <Toaster position="top-center" richColors />
     </main>
   );

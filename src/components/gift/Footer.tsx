@@ -25,29 +25,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="text-sm text-primary-foreground/70">
-          <p className="text-[0.68rem] tracking-[0.28em] text-gold uppercase">Follow</p>
-          <div className="mt-3 flex gap-3">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="glass-dark rounded-full p-2.5 transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              <Instagram className="size-4" />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="glass-dark rounded-full p-2.5 transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              <Facebook className="size-4" />
-            </a>
-          </div>
-        </div>
+        
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl px-6 text-xs text-primary-foreground/45">

@@ -1,7 +1,7 @@
 import { Check, Crown, Leaf, Sparkles } from "lucide-react";
-import suiteImg from "@/assets/g-suite.jpg";
-import coupleImg from "@/assets/g-couple.jpg";
-import spaImg from "@/assets/g-spa.jpg";
+import suiteImg from "@/assets/7.jpg";
+import coupleImg from "@/assets/4.jpg";
+import spaImg from "@/assets/10.jpg";
 import { Reveal } from "./Reveal";
 import { TiltCard } from "./TiltCard";
 import { cn } from "@/lib/utils";
