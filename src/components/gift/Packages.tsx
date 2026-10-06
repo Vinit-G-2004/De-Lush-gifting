@@ -1,137 +1,141 @@
-import { Check, Crown, Leaf, Sparkles } from "lucide-react";
-import suiteImg from "@/assets/7.jpg";
-import coupleImg from "@/assets/4.jpg";
-import spaImg from "@/assets/10.jpg";
 import { Reveal } from "./Reveal";
 import { TiltCard } from "./TiltCard";
-import { cn } from "@/lib/utils";
+import suite from "@/assets/9.jpg";
+import dining from "@/assets/10.jpg";
+import spa from "@/assets/11.jpg";
+import lobby from "@/assets/3.jpg";
 
-const packages = [
+const products = [
   {
-    id: "pause",
-    name: "DeLUSH Pause",
-    price: "₹3,999",
-    note: "+ taxes",
-    tagline: "A quiet night away",
-    image: suiteImg,
-    icon: Leaf,
-    features: [
-      "1 night stay for two",
-      "High Tea for two",
-      "Breakfast the next morning",
-      "Access to resort facilities",
+    name: "DeLUSH Experience Credit",
+    oldPrice: "₹10,000",
+    price: "₹8,500",
+    badge: "Best for Bulk Orders",
+    image: lobby,
+    points: [
+      "Flexible corporate voucher, redeemable across room, dining & wellness",
+      "Brandable for corporate gifting programmes",
     ],
   },
   {
-    id: "afterglow",
     name: "DeLUSH Afterglow",
+    oldPrice: "₹11,500",
     price: "₹7,500",
-    note: "+ taxes",
-    tagline: "The full celebration",
-    image: coupleImg,
-    icon: Sparkles,
     badge: "Most Popular",
-    features: [
+    image: suite,
+    points: [
       "1 night stay for two",
-      "High Tea + breakfast",
-      "Lunch or dinner at Mayavi",
-      "Access to resort facilities",
+      "High Tea and breakfast included",
+      "Mayavi lunch or dinner for two",
     ],
   },
   {
-    id: "topup",
+    name: "DeLUSH Pause",
+    oldPrice: "₹7,500",
+    price: "₹3,999",
+    badge: null,
+    image: dining,
+    points: [
+      "1 night stay for two",
+      "High Tea on arrival",
+      "Breakfast for two",
+    ],
+  },
+  {
     name: "DeLUSH TopUp",
+    oldPrice: null,
     price: "Premium add-on",
-    note: "on request",
-    tagline: "Make it unforgettable",
-    image: spaImg,
-    icon: Crown,
-    features: [
+    badge: null,
+    image: spa,
+    points: [
       "Add a curated meal experience",
-      "Signature spa therapy for two",
-      "Premium voucher presentation box",
-      "Personalised note & surprise setup",
+      "Add a signature spa session",
+      "Premium voucher presentation for any tier",
     ],
   },
 ];
 
-export function Packages() {
+export function Products() {
   return (
-    <section id="packages" className="bg-gradient-warm relative py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <Reveal className="text-center">
-          <p className="text-[0.68rem] tracking-[0.34em] text-muted-foreground uppercase">
-            Choose their escape
+    <section id="gifting" className="relative py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.4em] text-primary">
+            Corporate gifting collection
           </p>
-          <h2 className="mt-4 text-4xl sm:text-5xl">
-            Three ways to <span className="text-gold-gradient italic">gift a stay</span>
+
+          <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight sm:text-5xl">
+            Four ways to gift De LUSH
           </h2>
-          <div className="rule-gold mx-auto mt-7 w-40" />
         </Reveal>
 
-        <div className="tilt-stage mt-16 grid gap-8 md:grid-cols-3">
-          {packages.map((p, i) => (
-            <Reveal key={p.id} delay={i * 140}>
-              <TiltCard
-                max={8}
-                className={cn(
-                  "group h-full",
-                  p.badge && "md:-mt-6",
-                )}
-              >
-                <article
-                  className={cn(
-                    "glass-panel relative flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-shadow duration-500 group-hover:shadow-lift",
-                    p.badge && "shadow-gold",
-                  )}
-                >
-                  <div className="relative">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+          {products.map((p, i) => (
+            <Reveal key={p.name} delay={i * 110}>
+              <TiltCard className="group h-full">
+                <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow duration-300 hover:shadow-luxe">
+                  
+                  {/* Image */}
+                  <div className="relative h-44 overflow-hidden">
                     <img
                       src={p.image}
                       alt={p.name}
-                      width={1024}
-                      height={1280}
                       loading="lazy"
-                      className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-110"
                     />
+
                     {p.badge && (
-                      <span className="bg-gradient-gold absolute top-4 right-4 rounded-full px-3.5 py-1.5 text-[0.62rem] font-medium tracking-[0.2em] text-ink uppercase">
+                      <span className="absolute left-4 top-4 rounded-full bg-[image:var(--gradient-gold)] px-3 py-1 text-[0.6rem] uppercase tracking-[0.2em] text-ink">
                         {p.badge}
                       </span>
                     )}
                   </div>
 
-                  <div className="tilt-layer flex flex-1 flex-col p-7">
-                    <p.icon className="size-5 text-gold" />
-                    <h3 className="mt-3 text-2xl">{p.name}</h3>
-                    <p className="text-sm text-muted-foreground">{p.tagline}</p>
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-2xl">
+                      {p.name}
+                    </h3>
 
-                    <p className="font-display mt-5 text-4xl text-foreground">
-                      {p.price}
-                      <span className="ml-2 font-sans text-xs tracking-wide text-muted-foreground">
-                        {p.note}
+                    {/* Price */}
+                    <div className="mt-2 flex items-center gap-2">
+                      {p.oldPrice && (
+                        <del className="text-sm text-muted-foreground/70 decoration-1">
+                          {p.oldPrice}
+                        </del>
+                      )}
+
+                      <span className="text-sm font-medium uppercase tracking-[0.16em] text-primary">
+                        {p.price}
                       </span>
-                    </p>
 
-                    <ul className="mt-6 space-y-3 text-sm">
-                      {p.features.map((f) => (
-                        <li key={f} className="flex gap-3">
-                          <Check className="mt-0.5 size-4 shrink-0 text-gold" />
-                          <span className="text-muted-foreground">{f}</span>
+                      {/* Taxes only for Afterglow and Pause */}
+                      {(p.name === "DeLUSH Afterglow" ||
+                        p.name === "DeLUSH Pause") && (
+                        <span className="text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground">
+                          + taxes
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="rule-gold my-5 opacity-60" />
+
+                    {/* Points */}
+                    <ul className="flex-1 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                      {p.points.map((pt) => (
+                        <li key={pt} className="flex gap-3">
+                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                          {pt}
                         </li>
                       ))}
                     </ul>
 
+                    {/* Enquiry */}
                     <a
-                      href="#enquire"
-                      className={cn(
-                        "mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-transform duration-300 hover:-translate-y-0.5",
-                        p.badge
-                          ? "bg-gradient-gold text-ink"
-                          : "border border-gold/40 bg-card/60 text-foreground hover:border-gold",
-                      )}
+                      href="#enquiry"
+                      className="mt-6 inline-block text-xs uppercase tracking-[0.22em] text-foreground underline-offset-8 transition-colors hover:text-primary hover:underline"
                     >
-                      Gift this
+                      Enquire for bulk
                     </a>
                   </div>
                 </article>
